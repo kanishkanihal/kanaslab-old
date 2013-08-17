@@ -1,0 +1,30 @@
+auth_user:
+    pattern:  /
+    defaults: { _controller: "AcmeAuthBundle:User:index" }
+
+auth_user_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "AcmeAuthBundle:User:show" }
+
+auth_user_new:
+    pattern:  /new
+    defaults: { _controller: "AcmeAuthBundle:User:new" }
+
+auth_user_create:
+    pattern:  /create
+    defaults: { _controller: "AcmeAuthBundle:User:create" }
+    requirements: { _method: post }
+
+auth_user_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "AcmeAuthBundle:User:edit" }
+
+auth_user_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "AcmeAuthBundle:User:update" }
+    requirements: { _method: post|put }
+
+auth_user_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "AcmeAuthBundle:User:delete" }
+    requirements: { _method: post|delete }

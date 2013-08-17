@@ -1,0 +1,23 @@
+{# empty Twig template #}
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/acmeauth/css/bootstrap/css/bootstrap.css') }}" rel="stylesheet" />
+    <link href="{{ asset('bundles/acmeauth/css/bootstrap/css/bootstrap-responsive.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block javascripts %}
+
+
+{% endblock %}
+    <div class="container-fluid">
+    <div class="row-fluid">
+    <div class="span2">
+    <!--Sidebar content-->
+    </div>
+    <div class="span10">
+    {% block bodyauth %}
+    {% endblock %}
+    </div>
+    </div>
+    </div>

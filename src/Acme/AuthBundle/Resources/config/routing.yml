@@ -1,0 +1,18 @@
+AcmeAuthBundle_auth_user:
+    resource: "@AcmeAuthBundle/Resources/config/routing/user.yml"
+    prefix:   /auth/user
+        
+AcmeAuthBundle_auth_role:
+    resource: "@AcmeAuthBundle/Resources/config/routing/role.yml"
+    prefix:   /auth/role
+
+acme_auth_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: AcmeAuthBundle:Default:index }
+
+login:
+    pattern: /auth/login
+    defaults: { _controller: AcmeAuthBundle:Security:login }
+    
+login_check:
+    pattern: /login_check    

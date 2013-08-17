@@ -1,0 +1,16 @@
+acme_message:
+    resource: "@AcmeMessageBundle/Resources/config/routing.yml"
+    prefix:   /
+
+acme_organisation:
+    resource: "@AcmeOrganisationBundle/Resources/config/routing.yml"
+    prefix:   /
+
+acme_auth:
+    resource: "@AcmeAuthBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+
+
+

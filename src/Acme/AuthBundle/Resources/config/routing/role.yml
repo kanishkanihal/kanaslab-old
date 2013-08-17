@@ -1,0 +1,30 @@
+auth_role:
+    pattern:  /
+    defaults: { _controller: "AcmeAuthBundle:Role:index" }
+
+auth_role_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "AcmeAuthBundle:Role:show" }
+
+auth_role_new:
+    pattern:  /new
+    defaults: { _controller: "AcmeAuthBundle:Role:new" }
+
+auth_role_create:
+    pattern:  /create
+    defaults: { _controller: "AcmeAuthBundle:Role:create" }
+    requirements: { _method: post }
+
+auth_role_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "AcmeAuthBundle:Role:edit" }
+
+auth_role_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "AcmeAuthBundle:Role:update" }
+    requirements: { _method: post|put }
+
+auth_role_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "AcmeAuthBundle:Role:delete" }
+    requirements: { _method: post|delete }

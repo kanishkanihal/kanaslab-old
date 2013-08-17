@@ -1,0 +1,3 @@
+acme_organisation_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: AcmeOrganisationBundle:Default:index }

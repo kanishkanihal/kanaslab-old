@@ -1,0 +1,17 @@
+/* 
+    Document   : form-styles
+    Created on : Jul 21, 2013, 12:32:12 PM
+    Author     : kanishka
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+label{
+    display: inline-block;
+    
+    
+}
+
