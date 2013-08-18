@@ -3,14 +3,14 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {%include 'AcmeOrganisationBundle:Templates:css.html.twig'%}
+        {%include 'AcmeResourceBundle:Templates:css.html.twig'%}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
     </head>
     <body>
-        {%include 'AcmeOrganisationBundle:Templates:js.html.twig'%}
+        {%include 'AcmeResourceBundle:Templates:js.html.twig'%}
             <!-- Header and Nav -->
-        {%include 'AcmeOrganisationBundle:Templates:top-bar.html.twig'%}
+        {%include 'AcmeResourceBundle:Templates:top-bar.html.twig'%}
             <!-- End Header and Nav -->
             <div class="row">
                 <!-- Main Content Section -->
@@ -20,24 +20,24 @@
                 </div>
                     <!-- Nav Sidebar -->
                     <!-- This is source ordered to be pulled to the left on larger screens -->
-                    {%include 'AcmeOrganisationBundle:Templates:side-bar.html.twig'%}
+                    {%include 'AcmeResourceBundle:Templates:side-bar.html.twig'%}
             </div>
                 <!-- Footer -->
             <footer class="row">
                 <div class="large-12 columns">
                     <hr />
-                 {%include 'AcmeOrganisationBundle:Templates:bottom-bar.html.twig'%}   
+                 {%include 'AcmeResourceBundle:Templates:bottom-bar.html.twig'%}   
                 </div>
             </footer>
 
             <!-- Check for Zepto support, load jQuery if necessary -->
             <script>
-                document.write('<script src=/bundles/acmeorganisation/css/foundation-4.3.1/js/vendor/'
+                document.write('<script src=/bundles/acmeresource/css/foundation-4.3.1.custom/js/vendor/'
                         + ('__proto__' in {} ? 'zepto' : 'jquery')
                         + '.js><\/script>');
             </script>
 {%block javascript%}
-            <script src="{{ asset('bundles/acmeorganisation/css/foundation-4.3.1/js/foundation.min.js') }}"></script>
+            <script src="{{ asset('bundles/acmeresource/css/foundation-4.3.1.custom/js/foundation.min.js') }}"></script>
 {%endblock%}
             <script>
                 $(document).foundation();
