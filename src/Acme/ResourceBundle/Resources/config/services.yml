@@ -1,0 +1,7 @@
+parameters:
+#    acme_resource.example.class: Acme\ResourceBundle\Example
+
+services:
+#    acme_resource.example:
+#        class: %acme_resource.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
