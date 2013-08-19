@@ -9,6 +9,10 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 class UserType extends AbstractType
 {
 
+    /**
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -17,6 +21,12 @@ class UserType extends AbstractType
                 ->add('password')
                 ->add('email')
                 ->add('isActive')
+                ->add('birthDate', 'birthday', array(
+                    'widget' => 'choice',
+                    'format' => 'yyyy-MMMM-dd',
+                    'years' => range(1977,date('Y')),
+                    
+                ))
                 ->add('role', 'entity', array(
                     'class' => 'AcmeAuthBundle:Role',
                     'property' => 'name',
@@ -25,6 +35,9 @@ class UserType extends AbstractType
         ;
     }
 
+    /**
+     * @param OptionsResolverInterface $resolver
+     */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
@@ -32,6 +45,9 @@ class UserType extends AbstractType
         ));
     }
 
+    /**
+     * @return string
+     */
     public function getName()
     {
         return 'acme_authbundle_usertype';

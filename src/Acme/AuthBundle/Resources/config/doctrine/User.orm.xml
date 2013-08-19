@@ -9,6 +9,7 @@
     <field name="password" type="string" column="password" length="255"/>
     <field name="email" type="string" column="email" length="255"/>
     <field name="isActive" type="boolean" column="isActive"/>
+    <field name="birthDate" type="datetime" column="birthDate"/>
     <many-to-many field="role" inversed-by="user" target-entity="Acme\AuthBundle\Entity\Role">
         <join-table name="UserRole">
             <join-columns>

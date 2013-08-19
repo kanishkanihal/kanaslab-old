@@ -246,8 +246,9 @@ class User implements AdvancedUserInterface, \Serializable
 
     public function serialize()
     {
-        $this->isActive = true;
-        $this->salt = md5(uniqid(null, true));        
+        return serialize(array(
+            $this->id,
+        ));       
     }
 
     public function unserialize($serialized)

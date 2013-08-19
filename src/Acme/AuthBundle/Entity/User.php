@@ -257,4 +257,32 @@ class User implements AdvancedUserInterface, \Serializable
             $this->id,
         ) = unserialize($serialized);          
     }
+    /**
+     * @var \DateTime
+     */
+    private $birthDate;
+
+
+    /**
+     * Set birthDate
+     *
+     * @param \DateTime $birthDate
+     * @return User
+     */
+    public function setBirthDate($birthDate)
+    {
+        $this->birthDate = $birthDate;
+    
+        return $this;
+    }
+
+    /**
+     * Get birthDate
+     *
+     * @return \DateTime 
+     */
+    public function getBirthDate()
+    {
+        return $this->birthDate;
+    }
 }

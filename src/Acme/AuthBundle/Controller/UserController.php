@@ -37,13 +37,8 @@ class UserController extends Controller
     {
         $entity  = new User();
         $form = $this->createForm(new UserType(), $entity);
-        $form->bind($request);
+        $form->submit($request);
 
-        $factory = $this->get('security.encoder_factory');
-        $encoder = $factory->getEncoder($entity);
-        $password = $encoder->encodePassword($entity->getPassword(), $entity->getSalt());
-        $entity->setPassword($password);     
-        
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
@@ -134,13 +129,8 @@ class UserController extends Controller
 
         $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createForm(new UserType(), $entity);
-        $editForm->bind($request);
+        $editForm->submit($request);
 
-        $factory = $this->get('security.encoder_factory');
-        $encoder = $factory->getEncoder($entity);
-        $password = $encoder->encodePassword($entity->getPassword(), $entity->getSalt());
-        $entity->setPassword($password); 
-        
         if ($editForm->isValid()) {
             $em->persist($entity);
             $em->flush();
@@ -161,7 +151,7 @@ class UserController extends Controller
     public function deleteAction(Request $request, $id)
     {
         $form = $this->createDeleteForm($id);
-        $form->bind($request);
+        $form->submit($request);
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();

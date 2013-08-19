@@ -3,12 +3,15 @@
 {% block body -%}
     <h1>User list</h1>
 
-    <table class="records_list responsive">
+    <table class="records_list">
         <thead>
             <tr>
                 <th>Username</th>
+                <th>Salt</th>
+                <th>Password</th>
                 <th>Email</th>
                 <th>Isactive</th>
+                <th>Birthdate</th>
                 <th>Id</th>
                 <th>Actions</th>
             </tr>
@@ -17,8 +20,11 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('auth_user_show', { 'id': entity.id }) }}">{{ entity.username }}</a></td>
+                <td>{{ entity.salt }}</td>
+                <td>{{ entity.password }}</td>
                 <td>{{ entity.email }}</td>
                 <td>{{ entity.isActive }}</td>
+                <td>{% if entity.birthDate %}{{ entity.birthDate|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ entity.id }}</td>
                 <td>
                 <ul>
