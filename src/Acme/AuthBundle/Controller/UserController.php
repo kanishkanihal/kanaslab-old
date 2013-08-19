@@ -40,6 +40,14 @@ class UserController extends Controller
         $form->submit($request);
 
         if ($form->isValid()) {
+            /*
+             * Encoding password
+             */
+            $factory = $this->get('security.encoder_factory');
+            $encoder = $factory->getEncoder($entity);
+            $password = $encoder->encodePassword($entity->getPassword(), $entity->getSalt());
+            $entity->setPassword($password); 
+            
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
@@ -103,7 +111,7 @@ class UserController extends Controller
             throw $this->createNotFoundException('Unable to find User entity.');
         }
 
-        $editForm = $this->createForm(new UserType(), $entity);
+        $editForm = $this->createForm(new UserType(), $entity);       
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('AcmeAuthBundle:User:edit.html.twig', array(
@@ -132,6 +140,14 @@ class UserController extends Controller
         $editForm->submit($request);
 
         if ($editForm->isValid()) {
+            /*
+             * Encoding password
+             */
+            $factory = $this->get('security.encoder_factory');
+            $encoder = $factory->getEncoder($entity);
+            $password = $encoder->encodePassword($entity->getPassword(), $entity->getSalt());
+            $entity->setPassword($password);   
+            
             $em->persist($entity);
             $em->flush();
 
