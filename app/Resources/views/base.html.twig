@@ -29,19 +29,5 @@
                  {%include 'AcmeResourceBundle:Templates:bottom-bar.html.twig'%}   
                 </div>
             </footer>
-
-            <!-- Check for Zepto support, load jQuery if necessary -->
-            <script>
-                document.write('<script src=/bundles/acmeresource/css/foundation-4.3.1.custom/js/vendor/'
-                        + ('__proto__' in {} ? 'zepto' : 'jquery')
-                        + '.js><\/script>');
-            </script>
-{%block javascript%}
-            <script src="{{ asset('bundles/acmeresource/css/foundation-4.3.1.custom/js/foundation.min.js') }}"></script>
-{%endblock%}
-            <script>
-                $(document).foundation();
-            </script>
-
     </body>
 </html>

@@ -19,7 +19,7 @@ class UserType extends AbstractType
                 ->add('username')
                 ->add('salt')
                 ->add('password')
-                ->add('email')
+                ->add('email','email')
                 ->add('isActive')
                 ->add('birthDate', 'birthday', array(
                     'widget' => 'choice',
